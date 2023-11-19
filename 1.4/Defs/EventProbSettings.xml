@@ -39,11 +39,11 @@
             <defaultValue>true</defaultValue>
         </li>
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
 	<li Class="XmlExtensions.Setting.Text">
 		<text>Event Type Probabilities</text>
 		<font>Medium</font>
 	</li>
-	<li Class="XmlExtensions.Setting.GapLine"/>
 
 		<li Class="XmlExtensions.Setting.Numeric">
 			<key>RaidEnemyWeight</key>
@@ -125,11 +125,21 @@
 			<max>10000</max>
 		</li>
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
 	<li Class="XmlExtensions.Setting.Text">
 		<text>Faction Probabilities</text>
 		<font>Medium</font>
 	</li>
-	<li Class="XmlExtensions.Setting.GapLine"/>
+	<li Class="XmlExtensions.Setting.SetColor">
+		<color>(255,255,0)</color>
+	</li>
+	<li Class="XmlExtensions.Setting.Text">
+		<text>These are applied to each hostile faction individually. So if you set them all to 1 and there are 3 hostile tribal factions and only 1 mech faction, a tribal raid will be 3x as likely as a mech raid.</text>
+		<anchor>Middle</anchor>
+	</li>
+	<li Class="XmlExtensions.Setting.SetColor">
+		<color>(255,255,255)</color>
+	</li>
 
 
 		<li Class="XmlExtensions.Setting.Numeric">
@@ -188,11 +198,11 @@
 			<max>10000</max>
 		</li>
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
 	<li Class="XmlExtensions.Setting.Text">
 		<text>Raid Type Probabilities</text>
 		<font>Medium</font>
 	</li>
-	<li Class="XmlExtensions.Setting.GapLine"/>
 
 		<li Class="XmlExtensions.Setting.Numeric">
 			<key>BreachWeight</key>
@@ -226,11 +236,11 @@
 			<max>10000</max>
 		</li>
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
 	<li Class="XmlExtensions.Setting.Text">
 		<text>Arrival Type Probabilities</text>
 		<font>Medium</font>
 	</li>
-	<li Class="XmlExtensions.Setting.GapLine"/>
 
 		<li Class="XmlExtensions.Setting.Numeric">
 			<key>CenterDropWeight</key>
@@ -249,11 +259,11 @@
 		</li>
 
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
 	<li Class="XmlExtensions.Setting.Text">
 		<text>Cassandra Settings</text>
 		<font>Medium</font>
 	</li>
-	<li Class="XmlExtensions.Setting.GapLine"/>
 
 		<li Class="XmlExtensions.Setting.Numeric">
 			<key>Cassandra_minDaysPassed</key>
