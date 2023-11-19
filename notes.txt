@@ -1,0 +1,240 @@
+
+    - RaidEnemyWeight
+        <IncidentDef>
+            <defName>RaidEnemy</defName>
+            <baseChance>7.4</baseChance>
+    - InfestationWeight
+            <defName>Infestation</defName>
+            <baseChance>2.7</baseChance>
+    - ManhunterPackWeight
+            <defName>ManhunterPack</defName>
+            <baseChance>2.0</baseChance>
+    - MechClusterWeight
+            <defName>MechCluster</defName>
+            <baseChanceWithRoyalty>1.0</baseChanceWithRoyalty>
+    - AnimalInsanityMassWeight
+            <defName>AnimalInsanityMass</defName>
+            <baseChance>1.3</baseChance>
+    - ProblemCauserWeight
+            <defName>ProblemCauser</defName>
+            <baseChanceWithRoyalty>0.95</baseChanceWithRoyalty>
+    - DefoliatorShipPartCrashWeight
+            <defName>DefoliatorShipPartCrash</defName>
+            <baseChanceWithRoyalty>0.2</baseChanceWithRoyalty>
+    - PsychicEmanatorShipPartCrashWeight
+            <defName>PsychicEmanatorShipPartCrash</defName>
+            <baseChanceWithRoyalty>0.4</baseChanceWithRoyalty>
+    - WastepackInfestationWeight
+            <defName>WastepackInfestation</defName>
+            <baseChance>0.012</baseChance>
+
+
+    - TribalWeight (existing)
+        <FactionDef ParentName="FactionBase" Name="TribeBase" Abstract="True">
+            <raidCommonalityFromPointsCurve>
+                <points>
+                    <li>(0, 1)</li>
+                </points>
+            </raidCommonalityFromPointsCurve>
+    - OutlanderWeight (new one)
+        <FactionDef ParentName="FactionBase" Name="OutlanderFactionBase" Abstract="True">
+            <raidCommonalityFromPointsCurve>
+                <points>
+                    <li>(0, 1)</li>
+                </points>
+            </raidCommonalityFromPointsCurve>
+    - PirateWeight (new one)
+        <FactionDef Name="PirateBandBase" ParentName="FactionBase">
+            <defName>Pirate</defName>
+            <raidCommonalityFromPointsCurve>
+                <points>
+                    <li>(0, 1)</li>
+                </points>
+            </raidCommonalityFromPointsCurve>
+    - MechWeightRP700
+        <FactionDef ParentName="FactionBase">
+            <defName>Mechanoid</defName>
+            <raidCommonalityFromPointsCurve>
+                <points>
+                    <li>(300,  0)</li>
+                    <li>(700,  1)</li>
+                    <li>(1400, 1.8)</li>
+                    <li>(2800, 2.2)</li>
+                    <li>(4000, 2.6)</li>
+                </points>
+            </raidCommonalityFromPointsCurve>
+    - MechWeightRP1400
+    - MechWeightRP2800
+    - MechWeightRP4000
+
+    - BreachWeight
+        <RaidStrategyDef Abstract="True" Name="BreachingBase">
+            <selectionWeightPerPointsCurve> <!-- Note both breach strats use this, so it's in some sense doubled -->
+                <points>
+                    <li>(700, 0)</li>
+                    <li>(2000, 0.6)</li> 
+                </points>
+            </selectionWeightPerPointsCurve>
+    - MechBreachWeight
+        <RaidStrategyDef Abstract="True" Name="BreachingBase">
+            <selectionWeightCurvesPerFaction>
+                <li>
+                    <faction>Mechanoid</faction>  <!-- Special case for mechanoids -->
+                    <selectionWeightPerPointsCurve>
+                    <points>
+                        <li>(700, 0)</li>
+                        <li>(1000, 0.40)</li>
+                    </points>
+                    </selectionWeightPerPointsCurve>
+                </li>
+            </selectionWeightCurvesPerFaction>
+    - SapperWeight
+        <RaidStrategyDef>
+            <defName>ImmediateAttackSappers</defName>
+            <selectionWeightPerPointsCurve>
+                <points>
+                    <li>(700, 0)</li>
+                    <li>(1000, 0.4)</li>
+                </points>
+            </selectionWeightPerPointsCurve>
+    - SiegeWeight
+        <RaidStrategyDef>
+            <defName>Siege</defName>
+            <selectionWeightPerPointsCurve>
+                <points>
+                    <li>(700, 0)</li>
+                    <li>(1000, 1.6)</li>
+                </points>
+            </selectionWeightPerPointsCurve>
+
+
+    - CenterDropWeight
+        <PawnsArrivalModeDef>
+            <defName>CenterDrop</defName>
+            <selectionWeightCurve> <!-- not usable in many strategies and by many factions, so this gets boosted -->
+                <points>
+                    <li>(300, 0.0)</li>
+                    <li>(1000, 3.5)</li>
+                </points>
+            </selectionWeightCurve>
+    - MechCenterDropWeight
+        <PawnsArrivalModeDef>
+            <defName>CenterDrop</defName>
+            <selectionWeightCurvesPerFaction>
+                <li>
+                    <faction>Mechanoid</faction>  <!-- Special case for mechanoids -->
+                    <selectionWeightPerPointsCurve>
+                        <points>
+                        <li>(300, 0)</li>
+                        <li>(1000, 1.3)</li>
+                        </points>
+                    </selectionWeightPerPointsCurve>
+                </li>
+            </selectionWeightCurvesPerFaction>
+
+Description:
+
+(The textbox input is really wonky. If it's not behaving how you expect, just keep trying to input your text in different ways.)
+(If you're playing without Royalty the Psychic Droner Ship / Defoliator Ship / Mech Cluster settings won't do anything.)
+
+TLDR:
+    You want to lower the chance of something? Lower the number.
+    You want to raise the chance of something? Raise the number.
+    You want to look at the current probabilities? Enable dev mode, click the "Open debug logging menu." button. Then check out "Incident Chances", "Raid Strategy Sampled", "Raid Arrivemode Sampled", and "Raid Faction Sampled".
+
+
+The source code for the mod is based on RaidEventManager mod. That mod let's you toggle events on/off, but I wanted more control than that so I created this mod by modifying its source code.
+
+
+Explanation:
+
+This mod isn't particularly intuitive to use. This is because of the way the game implements all of this stuff and I'm too lazy to implement the mod in a way to make it more intuitive. Here's what you should know if you want to fully understand things:
+
+First let's quickly talk about weighted selection. You can imagine this like a bag of marbles where you reach into the bag and pull out a random marble. But there are different numbers of each type of marble. This is represented by a "weight". This is how Rimworld implements their probabilities. So for example, if eventX has a weight of 4, eventY has a weight of 2, and eventZ has a weight of 1, there's a total weight of 4+2+1=7. The chance of eventX is 4/7 = ~57%, eventY 2/7 = ~29%, etc.
+
+In general, modifying these weights lets you increase/decrease the chance of something happening, but the amount of effect it has is based on the values of all other event weights in its "bag". 
+
+When the storyteller decides that it's going to hit your colony with a major event, it first has to decide which event. This could be raid, infestation, manhunter pack, mech cluster, mass animal insanity, off-map problem causer, defoliator ship, psychic droner ship, wastepack infestation. Only the events in that list that are actually valid for your colony will be placed in the "marble bag". The number of "marbles" in the bag corresponding to each event are based on that event's weight (which you can control in the settings for this mod).
+
+So the storyteller pulls out a marble (event) from the bag. If a raid was selected, then the storyteller needs to pick a faction to raid you. This works the same way as the above and uses the faction weights (which you can control in the mod settings).
+
+Now you are going to get raided by a specific faction. The storyteller will next determine what type of raid it is (ImmediateAttack, ImmediateAttackSmart, StageThenAttack, ImmediateAttackBreaching, ImmediateAttackBreachingSmart, ImmediateAttackSappers, Siege). Depending on which faction is attacking, some of these may not be valid (for example, Mechs can only do the two breaching raid types or the StageThenAttack one). This mod only lets you directly modify the chance for breach, mech breach, sapper, and siege. The other choices don't seem that interesting to me and their chances will be indirectly affected by modifying the ones that are exposed anyways.
+
+The last decision the storyteller needs to make is the raid's Arrival type. Again, the potential choices for this will be affected by all the previous decisions. (For example, a tribal faction can't do a center drop raid. Neither can a breach raid.) The choices here are EdgeWalkIn, EdgeDrop, EdgeWalkInGroups, EdgeDropGroups, CenterDrop, RandomDrop. I'm currently only exposing CenterDrop in the mod settings, but if you want more control then feel free to edit the mod files yourself to add more (just copy what I've done for CenterDrop). 
+
+The last thing you need to understand about all of this is that many of these weights can be affected by your current Raid Points. Those will come in pairs of (raidPoints, weight). The way this works can be best shown with an example. By default, Sieges have a weight of 0 when below 700 raid points. At 1000 raid points, it has a weight of 1.6. Between 700 and 1000 raid points, its weight will be somewhere between 0 and 1.6 (based on how close you are to 1000). 
+
+For events that are structured like the above example, the mod only lets you modify the "target" weight (so 1.6 in that example). For events that have multiple pairs (like mech-faction raids which have weight 0 at 300rp, 1 at 700rp, 1.8 at 1400rp, 2.2 at 2800rp, and 2.6 at 4000rp), the mod settings will expose each of the non-zero thresholds. 
+
+-------------------------------------------------
+
+I've also included some random settings for tweaking the way Cassandra's event timings work and one to limit how frequently a mech cluster can occur after another one already has.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ideas:
+    - Be able to save presets
+    - Maybe give exposure to the storyteller behaviour
+  <StorytellerDef ParentName="BaseStoryteller">
+    <defName>Cassandra</defName>
+    <label>Cassandra Classic</label>
+    <description>Cassandra creates story events on a classic increasing curve of challenge and tension. She'll push you with dangerous events, then give breathing room, then come back to push once more.</description>
+    <portraitLarge>UI/HeroArt/Storytellers/CassandraClassic</portraitLarge>
+    <portraitTiny>UI/HeroArt/Storytellers/CassandraClassicTiny</portraitTiny>
+    <listOrder>20</listOrder>
+    <comps>
+      <!-- Intro -->
+      <li Class="StorytellerCompProperties_ClassicIntro"/>
+      <!-- Home threats -->
+      <li Class="StorytellerCompProperties_OnOffCycle">
+        <category>ThreatBig</category>
+        <minDaysPassed>11.0</minDaysPassed>
+        <onDays>4.6</onDays>
+        <offDays>6.0</offDays>
+        <minSpacingDays>1.9</minSpacingDays>
+        <numIncidentsRange>1~2</numIncidentsRange>
+        <forceRaidEnemyBeforeDaysPassed>20</forceRaidEnemyBeforeDaysPassed>
+
+
+					<!-- Cassandra_minDaysPassed -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_minDaysPassed</key>
+						<defaultValue>11.0</defaultValue>
+					</Operation>
+					<!-- Cassandra_onDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_onDays</key>
+						<defaultValue>4.6</defaultValue>
+					</Operation>
+					<!-- Cassandra_offDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_offDays</key>
+						<defaultValue>6.0</defaultValue>
+					</Operation>
+					<!-- Cassandra_minSpacingDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_minSpacingDays</key>
+						<defaultValue>1.9</defaultValue>
+					</Operation>
+
+Testing:
+    Try to get mech clusters to spawn quickly (yes it works)
+    Then try to get them to stop by adding a <minRefireDays>15</minRefireDays>

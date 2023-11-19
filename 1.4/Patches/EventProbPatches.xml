@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+
+	<Operation Class="XmlExtensions.OptionalPatch">
+		<modId>basics.eventprobabilities</modId>
+		<key>FullModToggle</key>
+		<defaultValue>true</defaultValue>
+		<caseTrue>
+			<Operation Class="XmlExtensions.AggregateValues">
+				<valueOperations>
+					<!-- RaidEnemyWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>RaidEnemyWeight</key>
+						<defaultValue>7.4</defaultValue>
+					</Operation>
+					<!-- InfestationWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>InfestationWeight</key>
+						<defaultValue>2.7</defaultValue>
+					</Operation>
+					<!-- ManhunterPackWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>ManhunterPackWeight</key>
+						<defaultValue>2.0</defaultValue>
+					</Operation>
+					<!-- MechClusterWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechClusterWeight</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+					<!-- AnimalInsanityMassWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>AnimalInsanityMassWeight</key>
+						<defaultValue>1.3</defaultValue>
+					</Operation>
+					<!-- ProblemCauserWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>ProblemCauserWeight</key>
+						<defaultValue>0.95</defaultValue>
+					</Operation>
+					<!-- DefoliatorShipPartCrashWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>DefoliatorShipPartCrashWeight</key>
+						<defaultValue>0.2</defaultValue>
+					</Operation>
+					<!-- PsychicEmanatorShipPartCrashWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>PsychicEmanatorShipPartCrashWeight</key>
+						<defaultValue>0.4</defaultValue>
+					</Operation>
+					<!-- WastepackInfestationWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>WastepackInfestationWeight</key>
+						<defaultValue>0.012</defaultValue>
+					</Operation>
+
+					<!-- TribalWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>TribalWeight</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+					<!-- OutlanderWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>OutlanderWeight</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+					<!-- PirateWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>PirateWeight</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+					<!-- MechWeightRP700 -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechWeightRP700</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+					<!-- MechWeightRP1400 -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechWeightRP1400</key>
+						<defaultValue>1.8</defaultValue>
+					</Operation>
+					<!-- MechWeightRP2800 -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechWeightRP2800</key>
+						<defaultValue>2.2</defaultValue>
+					</Operation>
+					<!-- MechWeightRP4000 -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechWeightRP4000</key>
+						<defaultValue>2.6</defaultValue>
+					</Operation>
+
+					<!-- BreachWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>BreachWeight</key>
+						<defaultValue>0.6</defaultValue>
+					</Operation>
+					<!-- MechBreachWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechBreachWeight</key>
+						<defaultValue>0.4</defaultValue>
+					</Operation>
+					<!-- SapperWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>SapperWeight</key>
+						<defaultValue>0.4</defaultValue>
+					</Operation>
+					<!-- SiegeWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>SiegeWeight</key>
+						<defaultValue>1.6</defaultValue>
+					</Operation>
+
+					<!-- CenterDropWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>CenterDropWeight</key>
+						<defaultValue>3.5</defaultValue>
+					</Operation>
+					<!-- MechCenterDropWeight -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechCenterDropWeight</key>
+						<defaultValue>1.3</defaultValue>
+					</Operation>
+
+					<!-- Cassandra_minDaysPassed -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_minDaysPassed</key>
+						<defaultValue>11.0</defaultValue>
+					</Operation>
+					<!-- Cassandra_onDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_onDays</key>
+						<defaultValue>4.6</defaultValue>
+					</Operation>
+					<!-- Cassandra_offDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_offDays</key>
+						<defaultValue>6.0</defaultValue>
+					</Operation>
+					<!-- Cassandra_minSpacingDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>Cassandra_minSpacingDays</key>
+						<defaultValue>1.9</defaultValue>
+					</Operation>
+
+					<!-- MechClusterMinRefireDays -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>basics.eventprobabilities</modId>
+						<key>MechClusterMinRefireDays</key>
+						<defaultValue>1.0</defaultValue>
+					</Operation>
+				</valueOperations>
+
+            	<apply>
+					<!-- RaidEnemyWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "RaidEnemy"]/baseChance</xpath>
+						<value>
+							<baseChance>{RaidEnemyWeight}</baseChance>
+						</value>
+					</Operation>
+					<!-- InfestationWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "Infestation"]/baseChance</xpath>
+						<value>
+							<baseChance>{InfestationWeight}</baseChance>
+						</value>
+					</Operation>
+					<!-- ManhunterPackWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "ManhunterPack"]/baseChance</xpath>
+						<value>
+							<baseChance>{ManhunterPackWeight}</baseChance>
+						</value>
+					</Operation>
+					<!-- MechClusterWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "MechCluster"]/baseChanceWithRoyalty</xpath>
+						<value>
+							<baseChanceWithRoyalty>{MechClusterWeight}</baseChanceWithRoyalty>
+						</value>
+					</Operation>
+					<!-- AnimalInsanityMassWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "AnimalInsanityMass"]/baseChance</xpath>
+						<value>
+							<baseChance>{AnimalInsanityMassWeight}</baseChance>
+						</value>
+					</Operation>
+					<!-- ProblemCauserWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "ProblemCauser"]/baseChanceWithRoyalty</xpath>
+						<value>
+							<baseChanceWithRoyalty>{ProblemCauserWeight}</baseChanceWithRoyalty>
+						</value>
+					</Operation>
+					<!-- DefoliatorShipPartCrashWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "DefoliatorShipPartCrash"]/baseChanceWithRoyalty</xpath>
+						<value>
+							<baseChanceWithRoyalty>{DefoliatorShipPartCrashWeight}</baseChanceWithRoyalty>
+						</value>
+					</Operation>
+					<!-- PsychicEmanatorShipPartCrashWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "PsychicEmanatorShipPartCrash"]/baseChanceWithRoyalty</xpath>
+						<value>
+							<baseChanceWithRoyalty>{PsychicEmanatorShipPartCrashWeight}</baseChanceWithRoyalty>
+						</value>
+					</Operation>
+					<!-- WastepackInfestationWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/IncidentDef[defName = "WastepackInfestation"]/baseChance</xpath>
+						<value>
+							<baseChance>{WastepackInfestationWeight}</baseChance>
+						</value>
+					</Operation>
+
+
+					<!-- TribalWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/FactionDef[@Name = "TribeBase"]/raidCommonalityFromPointsCurve/points</xpath>
+						<value>
+							<points>
+								<li>(0, {TribalWeight})</li>
+							</points>
+						</value>
+					</Operation>
+					<!-- OutlanderWeight -->
+					<Operation Class="PatchOperationAdd">
+					<xpath>/Defs/FactionDef[@Name = "OutlanderFactionBase"]</xpath>
+						<value>
+							<raidCommonalityFromPointsCurve>
+								<points>
+									<li>(0, {OutlanderWeight})</li>
+								</points>
+							</raidCommonalityFromPointsCurve>
+						</value>
+					</Operation>
+					<!-- PirateWeight -->
+					<Operation Class="PatchOperationAdd">
+					<xpath>/Defs/FactionDef[@Name = "PirateBandBase"]</xpath>
+						<value>
+							<raidCommonalityFromPointsCurve>
+								<points>
+									<li>(0, {PirateWeight})</li>
+								</points>
+							</raidCommonalityFromPointsCurve>
+						</value>
+					</Operation>
+					<!-- MechWeightRP_ -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/FactionDef[defName = "Mechanoid"]/raidCommonalityFromPointsCurve/points</xpath>
+						<value>
+							<points>
+								<li>(300,  0)</li>
+								<li>(700,  {MechWeightRP700})</li>
+								<li>(1400, {MechWeightRP1400})</li>
+								<li>(2800, {MechWeightRP2800})</li>
+								<li>(4000, {MechWeightRP4000})</li>
+							</points>
+						</value>
+					</Operation>
+
+					<!-- BreachWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/RaidStrategyDef[@Name = "BreachingBase"]/selectionWeightPerPointsCurve/points</xpath>
+						<value>
+							<points>
+								<li>(700, 0)</li>
+								<li>(2000, {BreachWeight})</li> 
+							</points>
+						</value>
+					</Operation>
+					<!-- MechBreachWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/RaidStrategyDef[@Name = "BreachingBase"]/selectionWeightCurvesPerFaction</xpath>
+						<value>
+							<selectionWeightCurvesPerFaction>
+								<li>
+									<faction>Mechanoid</faction>  <!-- Special case for mechanoids -->
+									<selectionWeightPerPointsCurve>
+									<points>
+										<li>(700, 0)</li>
+										<li>(1000, {MechBreachWeight})</li>
+									</points>
+									</selectionWeightPerPointsCurve>
+								</li>
+							</selectionWeightCurvesPerFaction>
+						</value>
+					</Operation>
+					<!-- SapperWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/RaidStrategyDef[defName = "ImmediateAttackSappers"]/selectionWeightPerPointsCurve/points</xpath>
+						<value>
+							<points>
+								<li>(700, 0)</li>
+								<li>(1000, {SapperWeight})</li>
+							</points>
+						</value>
+					</Operation>
+					<!-- SiegeWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/RaidStrategyDef[defName = "Siege"]/selectionWeightPerPointsCurve/points</xpath>
+						<value>
+							<points>
+								<li>(700, 0)</li>
+								<li>(1000, {SiegeWeight})</li>
+							</points>
+						</value>
+					</Operation>
+
+					<!-- CenterDropWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/PawnsArrivalModeDef[defName = "CenterDrop"]/selectionWeightCurve/points</xpath>
+						<value>
+							<points>
+								<li>(300, 0.0)</li>
+								<li>(1000, {CenterDropWeight})</li>
+							</points>
+						</value>
+					</Operation>
+					<!-- MechCenterDropWeight -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/PawnsArrivalModeDef[defName = "CenterDrop"]/selectionWeightCurvesPerFaction</xpath>
+						<value>
+							<selectionWeightCurvesPerFaction>
+								<li>
+									<faction>Mechanoid</faction>  <!-- Special case for mechanoids -->
+									<selectionWeightPerPointsCurve>
+										<points>
+										<li>(300, 0)</li>
+										<li>(1000, {MechCenterDropWeight})</li>
+										</points>
+									</selectionWeightPerPointsCurve>
+								</li>
+							</selectionWeightCurvesPerFaction>
+						</value>
+					</Operation>
+
+
+					<!-- Cassandra_minDaysPassed -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/StorytellerDef[defName = "Cassandra"]/comps/li[@Class="StorytellerCompProperties_OnOffCycle"]/minDaysPassed</xpath>
+						<value>
+							<minDaysPassed>{Cassandra_minDaysPassed}</minDaysPassed>
+						</value>
+					</Operation>
+					<!-- Cassandra_onDays -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/StorytellerDef[defName = "Cassandra"]/comps/li[@Class="StorytellerCompProperties_OnOffCycle"]/onDays</xpath>
+						<value>
+							<onDays>{Cassandra_onDays}</onDays>
+						</value>
+					</Operation>
+					<!-- Cassandra_offDays -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/StorytellerDef[defName = "Cassandra"]/comps/li[@Class="StorytellerCompProperties_OnOffCycle"]/offDays</xpath>
+						<value>
+							<offDays>{Cassandra_offDays}</offDays>
+						</value>
+					</Operation>
+					<!-- Cassandra_minSpacingDays -->
+					<Operation Class="PatchOperationReplace">
+					<xpath>/Defs/StorytellerDef[defName = "Cassandra"]/comps/li[@Class="StorytellerCompProperties_OnOffCycle"]/minSpacingDays</xpath>
+						<value>
+							<minSpacingDays>{Cassandra_minSpacingDays}</minSpacingDays>
+						</value>
+					</Operation>
+
+
+					<!-- MechClusterMinRefireDays -->
+					<Operation Class="PatchOperationAdd">
+					<xpath>/Defs/IncidentDef[defName = "MechCluster"]</xpath>
+						<value>
+							<minRefireDays>{MechClusterMinRefireDays}</minRefireDays>
+						</value>
+					</Operation>
+
+				</apply>
+        	</Operation>
+		</caseTrue>
+	</Operation>
+
+
+</Patch>
+	
