@@ -294,6 +294,41 @@
 			<max>10000</max>
 		</li>
 
+	<li Class="XmlExtensions.Setting.GapLine"/>
+	<li Class="XmlExtensions.Setting.Text">
+		<text>Psychic Droner Settings</text>
+		<font>Medium</font>
+	</li>
+
+		<li Class="XmlExtensions.Setting.Numeric">
+			<key>droner_low</key>
+			<label>Low Drone Negative Effect (Def: 12)</label>
+			<defaultValue>12</defaultValue>
+			<min>0</min>
+			<max>100</max>
+		</li>
+		<li Class="XmlExtensions.Setting.Numeric">
+			<key>droner_moderate</key>
+			<label>Moderate Drone Negative Effect (Def: 22)</label>
+			<defaultValue>22</defaultValue>
+			<min>0</min>
+			<max>100</max>
+		</li>
+		<li Class="XmlExtensions.Setting.Numeric">
+			<key>droner_high</key>
+			<label>High Drone Negative Effect (Def: 30)</label>
+			<defaultValue>30</defaultValue>
+			<min>0</min>
+			<max>100</max>
+		</li>
+		<li Class="XmlExtensions.Setting.Numeric">
+			<key>droner_extreme</key>
+			<label>Extreme Drone Negative Effect (Def: 40)</label>
+			<defaultValue>40</defaultValue>
+			<min>0</min>
+			<max>100</max>
+		</li>
+
 	<li Class="XmlExtensions.Setting.ResetSettings"/>
 </settings>
 </XmlExtensions.SettingsMenuDef>
